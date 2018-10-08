@@ -1,6 +1,6 @@
 # random-starred-repository
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/19f44650e8ef48d68e3ec6837bead128)](https://app.codacy.com/app/vintagesucks/random-starred-repository?utm_source=github.com&utm_medium=referral&utm_content=vintagesucks/random-starred-repository&utm_campaign=Badge_Grade_Settings)
+[![Dependabot Badge](https://img.shields.io/badge/Dependabot-enabled-blue.svg)](https://dependabot.com/) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/19f44650e8ef48d68e3ec6837bead128)](https://app.codacy.com/app/vintagesucks/random-starred-repository)
 
 Returns a random repository starred by a user
 
