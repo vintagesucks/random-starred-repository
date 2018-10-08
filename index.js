@@ -11,17 +11,17 @@ if (!user) {
 
 const stars = (user, page) =>
   got(`https://api.github.com/users/${user}/starred?page=${page}`)
-    .then(res => JSON.parse(res.body))
-    .then(starred =>
-      starred.map(s => ({
+    .then((res) => JSON.parse(res.body))
+    .then((starred) =>
+      starred.map((s) => ({
         owner: s.owner.login,
         repo: s.name
       }))
     );
 
-const randomPage = user =>
+const randomPage = (user) =>
   got(`https://api.github.com/users/${user}/starred`)
-    .then(res =>
+    .then((res) =>
       res.headers.link
         .split(",")[1]
         .split("page=")
@@ -29,10 +29,10 @@ const randomPage = user =>
         .split(">")
         .shift()
     )
-    .then(pages => Math.floor(Math.random() * pages) + 1);
+    .then((pages) => Math.floor(Math.random() * pages) + 1);
 
 randomPage(user)
-  .then(page => stars(user, page))
-  .then(result =>
+  .then((page) => stars(user, page))
+  .then((result) =>
     console.log("https://github.com/" + result[0].owner + "/" + result[0].repo)
   );
