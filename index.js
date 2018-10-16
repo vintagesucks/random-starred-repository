@@ -19,15 +19,13 @@ const stars = (user, page) =>
       }))
     );
 
+let lastPage = new RegExp(/(.*)page=(.*)>; rel=\"last\"/);
+
 const randomPage = (user) =>
   got(`https://api.github.com/users/${user}/starred`)
     .then((res) =>
       res.headers.link
-        .split(",")[1]
-        .split("page=")
-        .pop()
-        .split(">")
-        .shift()
+        .replace(lastPage, "$2")
     )
     .then((pages) => Math.floor(Math.random() * pages) + 1);
 
