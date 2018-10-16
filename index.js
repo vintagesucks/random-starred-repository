@@ -4,6 +4,7 @@ const got = require("got");
 
 let user = process.argv.slice(2)[0];
 let randomEntry = Math.floor(Math.random() * 29) + 0;
+let lastPage = new RegExp(/(.*)page=(.*)>; rel=\"last\"/);
 
 if (!user) {
   console.log("Usage: `node index.js username`");
@@ -19,8 +20,6 @@ const stars = (user, page) =>
         repo: s.name
       }))
     );
-
-let lastPage = new RegExp(/(.*)page=(.*)>; rel=\"last\"/);
 
 const randomPage = (user) =>
   got(`https://api.github.com/users/${user}/starred`)
