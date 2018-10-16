@@ -3,6 +3,7 @@
 const got = require("got");
 
 let user = process.argv.slice(2)[0];
+let randomEntry = Math.floor(Math.random() * 29) + 0;
 
 if (!user) {
   console.log("Usage: `node index.js username`");
@@ -29,8 +30,8 @@ const randomPage = (user) =>
     )
     .then((pages) => Math.floor(Math.random() * pages) + 1);
 
-randomPage(user)
+randomPage(user, randomEntry)
   .then((page) => stars(user, page))
   .then((result) =>
-    console.log("https://github.com/" + result[0].owner + "/" + result[0].repo)
+    console.log("https://github.com/" + result[randomEntry].owner + "/" + result[randomEntry].repo)
   );
