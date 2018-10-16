@@ -11,7 +11,7 @@ if (!user) {
   process.exit(1);
 }
 
-const stars = (user, page) =>
+const getStars = (user, page) =>
   got(`https://api.github.com/users/${user}/starred?page=${page}`)
     .then((res) => JSON.parse(res.body))
     .then((starred) =>
@@ -21,7 +21,7 @@ const stars = (user, page) =>
       }))
     );
 
-const randomPage = (user) =>
+const getRandomPage = (user) =>
   got(`https://api.github.com/users/${user}/starred`)
     .then((res) =>
       res.headers.link
@@ -29,8 +29,8 @@ const randomPage = (user) =>
     )
     .then((pages) => Math.floor(Math.random() * pages) + 1);
 
-randomPage(user, randomEntry)
-  .then((page) => stars(user, page))
+getRandomPage(user, randomEntry)
+  .then((page) => getStars(user, page))
   .then((result) =>
     console.log("https://github.com/" + result[randomEntry].owner + "/" + result[randomEntry].repo)
   );
