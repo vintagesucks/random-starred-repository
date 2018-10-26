@@ -3,7 +3,7 @@
 const got = require("got");
 
 let user = process.argv.slice(2)[0];
-let randomEntry = Math.floor(Math.random() * 29) + 0;
+let randomEntry = Math.floor(Math.random() * 30);
 let lastPage = new RegExp(/(.*)page=(.*)>; rel=\"last\"/);
 
 if (!user) {
