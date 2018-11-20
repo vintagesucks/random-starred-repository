@@ -1,6 +1,7 @@
 "use strict";
 
 const got = require("got");
+const { green } = require('kleur');
 
 let user = process.argv.slice(2)[0];
 let randomEntry = Math.floor(Math.random() * 30);
@@ -32,5 +33,7 @@ const getRandomPage = (user) =>
 getRandomPage(user, randomEntry)
   .then((page) => getStars(user, page))
   .then((result) =>
-    console.log("https://github.com/" + result[randomEntry].owner + "/" + result[randomEntry].repo)
+    console.log(green().bold(
+      "https://github.com/" + result[randomEntry].owner + "/" + result[randomEntry].repo
+    ))
   );
