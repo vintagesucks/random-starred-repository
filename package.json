@@ -10,7 +10,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "got": "^9.3.2",
+    "got": "^9.5.1",
     "kleur": "^3.0.0"
   }
 }
