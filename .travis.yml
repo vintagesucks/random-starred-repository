@@ -3,4 +3,11 @@ node_js:
   - "lts/*"
   - "node"
 
-script: node index.js vintagesucks
+cache: npm
+
+before_script:
+  - npm install --global xo
+
+script: 
+  - npm test
+  - node index.js vintagesucks
