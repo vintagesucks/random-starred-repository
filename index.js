@@ -30,7 +30,7 @@ const getRandomPage = (user) =>
     )
     .then((pages) => Math.floor(Math.random() * pages) + 1);
 
-getRandomPage(user, randomEntry)
+getRandomPage(user)
   .then((page) => getStars(user, page))
   .then((result) =>
     console.log(green().bold(
