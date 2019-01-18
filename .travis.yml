@@ -6,8 +6,4 @@ node_js:
 cache: npm
 
 before_script:
-  - npm install --global xo
-
-script: 
-  - npm test
   - node index.js vintagesucks
