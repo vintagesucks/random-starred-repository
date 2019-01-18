@@ -23,7 +23,7 @@ const getStars = (user, page) =>
     )
     .catch((error) => {
       console.error(red().bold('Unable to get stars (' + error.statusCode + ' ' + error.statusMessage + ')'))
-      process.exit(1)
+      process.exit(0)
     });
 
 const getRandomPage = (user) =>
