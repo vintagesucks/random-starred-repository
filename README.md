@@ -6,7 +6,7 @@ Returns a random repository starred by a user
 
 ## Setup
 ```sh
-npm install
+yarn
 ```
 
 ## Usage
