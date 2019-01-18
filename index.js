@@ -1,7 +1,7 @@
 "use strict";
 
 const got = require("got");
-const { green } = require('kleur');
+const { green, red } = require('kleur');
 
 let user = process.argv.slice(2)[0];
 let randomEntry = Math.floor(Math.random() * 30);
@@ -20,7 +20,11 @@ const getStars = (user, page) =>
         owner: s.owner.login,
         repo: s.name
       }))
-    );
+    )
+    .catch((error) => {
+      console.error(red().bold('Unable to get stars (' + error.statusCode + ' ' + error.statusMessage + ')'))
+      process.exit(1)
+    });
 
 const getRandomPage = (user) =>
   got(`https://api.github.com/users/${user}/starred`)
@@ -28,7 +32,8 @@ const getRandomPage = (user) =>
       res.headers.link
         .replace(lastPage, "$2")
     )
-    .then((pages) => Math.floor(Math.random() * pages) + 1);
+    .then((pages) => Math.floor(Math.random() * pages) + 1)
+    .catch((error) => console.error(red().bold('Unable to get random page, falling back to first page (' + error.statusCode + ' ' + error.statusMessage + ')')));
 
 getRandomPage(user)
   .then((page) => getStars(user, page))
