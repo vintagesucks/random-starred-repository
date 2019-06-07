@@ -11,7 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "got": "^9.3.2",
-    "kleur": "^3.0.2"
+    "kleur": "^3.0.3"
   },
   "devDependencies": {
     "xo": "^0.24.0"
