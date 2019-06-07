@@ -5,5 +5,8 @@ node_js:
 
 cache: npm
 
+before_install:
+  - npm install -g yarn
+
 before_script:
   - node index.js vintagesucks
