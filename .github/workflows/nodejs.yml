@@ -1,0 +1,22 @@
+name: Node CI
+on: [push]
+jobs:
+  build:
+    strategy:
+      matrix:
+        node: [ '12', '10' ]
+        platform: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.platform }}
+    steps:
+    - uses: actions/checkout@master
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node }}
+    - name: install yarn
+      run: npm install -g yarn
+    - name: yarn install, xo, and test
+      run: |
+        yarn
+        yarn test
+        node index.js vintagesucks
