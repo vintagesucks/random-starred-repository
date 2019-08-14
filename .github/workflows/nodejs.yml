@@ -3,12 +3,15 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [ '12', '10' ]
     steps:
     - uses: actions/checkout@master
-    - name: Use Node.js 10.x
+    - name: Setup Node.js
       uses: actions/setup-node@v1
       with:
-        version: 10.x
+        node-version: ${{ matrix.node }}
     - name: install yarn
       run: npm install -g yarn
     - name: yarn install, xo, and test
