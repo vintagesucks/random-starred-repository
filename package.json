@@ -14,7 +14,7 @@
     "kleur": "^3.0.3"
   },
   "devDependencies": {
-    "xo": "^0.25.3"
+    "xo": "^0.25.4"
   },
   "xo": {
     "rules": {
