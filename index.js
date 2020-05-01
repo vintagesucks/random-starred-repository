@@ -16,7 +16,7 @@ if (!user) {
 
 const getStars = (user, page) =>
   got(`https://api.github.com/users/${user}/starred?page=${page}`)
-    .then(res => JSON.parse(res.body))
+    .then(response => JSON.parse(response.body))
     .then(starred =>
       starred.map(s => ({
         owner: s.owner.login,
@@ -30,8 +30,8 @@ const getStars = (user, page) =>
 
 const getRandomPage = user =>
   got(`https://api.github.com/users/${user}/starred`)
-    .then(res =>
-      res.headers.link
+    .then(response =>
+      response.headers.link
         .replace(lastPage, '$2')
     )
     .then(pages => Math.floor(Math.random() * pages) + 1)
