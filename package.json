@@ -1,6 +1,6 @@
 {
   "name": "random-starred-repository",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,8 @@
     "rules": {
       "eol-last": 0,
       "indent": [
-        "error", 2
+        "error",
+        2
       ]
     }
   }
