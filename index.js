@@ -4,9 +4,10 @@
 
 const got = require('got');
 const {green, red} = require('kleur');
+const random = require('random');
 
 const user = process.argv.slice(2)[0];
-const randomEntry = Math.floor(Math.random() * 30);
+const randomEntry = random.int(0, 29);
 const lastPage = new RegExp(/(.*)page=(.*)>; rel="last"/);
 
 if (!user) {
@@ -34,7 +35,7 @@ const getRandomPage = user =>
       response.headers.link
         .replace(lastPage, '$2')
     )
-    .then(pages => Math.floor(Math.random() * pages) + 1)
+    .then(pages => random.int(1, Number(pages)))
     .catch(error => console.error(red().bold('Unable to get random page, falling back to first page (' + error.statusCode + ' ' + error.statusMessage + ')')));
 
 getRandomPage(user)
