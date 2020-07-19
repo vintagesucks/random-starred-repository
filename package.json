@@ -6,6 +6,9 @@
   "scripts": {
     "test": "xo"
   },
+  "bin": {
+    "random-starred-repository": "./index.js"
+  },
   "keywords": [],
   "author": "",
   "license": "MIT",
