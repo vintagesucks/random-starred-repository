@@ -10,7 +10,7 @@ const randomEntry = Math.floor(Math.random() * 30);
 const lastPage = new RegExp(/(.*)page=(.*)>; rel="last"/);
 
 if (!user) {
-  console.log('Usage: `node index.js username`');
+  console.log('Usage: `npx -q random-starred-repository username`');
   process.exit(1);
 }
 

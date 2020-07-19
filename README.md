@@ -4,14 +4,9 @@
 
 Returns a random repository starred by a user
 
-## Setup
-```sh
-yarn
-```
-
 ## Usage
 ```sh
-node index.js username
+npx -q random-starred-repository username
 ```
 
 ## Example output
