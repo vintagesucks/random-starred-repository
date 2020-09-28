@@ -2419,9 +2419,9 @@ kind-of@^6.0.3:
   integrity sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
 
 kleur@^4.0.2:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/kleur/-/kleur-4.1.1.tgz#80b49dd7d1afeba41b8dcdf4ecfff9252205fc52"
-  integrity sha512-BsNhM6T/yTWFG580CRnYhT3LfUuPK7Hwrm+W2H0G8lK/nogalP5Nsrh/cHjxVVkzl0sFm7z8b8rNcZCfKxeoxA==
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/kleur/-/kleur-4.1.2.tgz#aa58ce5e76b84fbd571307f1d1b77f74db8593f3"
+  integrity sha512-GDy+aV+1kr510OLi3Rkb81+t3orUyX5iHjNFEmHw6WJg6PB71HPhCLHOh2pWNMKLd7L7ywI9rzpSR664E20TQQ==
 
 latest-version@^5.0.0:
   version "5.1.0"
