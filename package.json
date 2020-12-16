@@ -18,7 +18,7 @@
     "random": "^2.2.0"
   },
   "devDependencies": {
-    "xo": "^0.35.0"
+    "xo": "^0.36.1"
   },
   "xo": {
     "rules": {
