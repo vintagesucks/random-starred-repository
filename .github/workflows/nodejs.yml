@@ -4,7 +4,7 @@ jobs:
   build:
     strategy:
       matrix:
-        node: [ '14', '12' ]
+        node: [ '15', '14' ]
         platform: [ubuntu-latest]
     runs-on: ${{ matrix.platform }}
     steps:
