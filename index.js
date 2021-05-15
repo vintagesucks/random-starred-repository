@@ -1,10 +1,8 @@
 #!/usr/bin/env node
 
-'use strict';
-
-const got = require('got');
-const {green, red} = require('kleur');
-const random = require('random');
+import got from 'got';
+import kleur from 'kleur';
+import random from 'random';
 
 const user = process.argv.slice(2)[0];
 const randomEntry = random.int(0, 29);
@@ -25,7 +23,7 @@ const getStars = (user, page) =>
       }))
     )
     .catch(error => {
-      console.error(red().bold('Unable to get stars (' + error.statusCode + ' ' + error.statusMessage + ')'));
+      console.error(kleur.red().bold('Unable to get stars (' + error.statusCode + ' ' + error.statusMessage + ')'));
       process.exit(0);
     });
 
@@ -36,12 +34,12 @@ const getRandomPage = user =>
         .replace(lastPage, '$2')
     )
     .then(pages => random.int(1, Number(pages)))
-    .catch(error => console.error(red().bold('Unable to get random page, falling back to first page (' + error.statusCode + ' ' + error.statusMessage + ')')));
+    .catch(error => console.error(kleur.red().bold('Unable to get random page, falling back to first page (' + error.statusCode + ' ' + error.statusMessage + ')')));
 
 getRandomPage(user)
   .then(page => getStars(user, page))
   .then(result =>
-    console.log(green().bold(
+    console.log(kleur.green().bold(
       'https://github.com/' + result[randomEntry].owner + '/' + result[randomEntry].repo
     ))
   );
