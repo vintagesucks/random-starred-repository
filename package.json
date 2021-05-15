@@ -4,6 +4,7 @@
   "description": "Returns a random repository starred by a user",
   "repository": "vintagesucks/random-starred-repository",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "xo"
   },
@@ -18,7 +19,7 @@
     "random": "^3.0.5"
   },
   "devDependencies": {
-    "xo": "^0.39.1"
+    "xo": "^0.40.1"
   },
   "xo": {
     "rules": {
