@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import process from 'node:process';
 import got from 'got';
 import kleur from 'kleur';
 import random from 'random';
@@ -19,8 +20,8 @@ const getStars = (user, page) =>
     .then(starred =>
       starred.map(s => ({
         owner: s.owner.login,
-        repo: s.name
-      }))
+        repo: s.name,
+      })),
     )
     .catch(error => {
       console.error(kleur.red().bold('Unable to get stars (' + error.statusCode + ' ' + error.statusMessage + ')'));
@@ -31,7 +32,7 @@ const getRandomPage = user =>
   got(`https://api.github.com/users/${user}/starred`)
     .then(response =>
       response.headers.link
-        .replace(lastPage, '$2')
+        .replace(lastPage, '$2'),
     )
     .then(pages => random.int(1, Number(pages)))
     .catch(error => console.error(kleur.red().bold('Unable to get random page, falling back to first page (' + error.statusCode + ' ' + error.statusMessage + ')')));
@@ -40,6 +41,6 @@ getRandomPage(user)
   .then(page => getStars(user, page))
   .then(result =>
     console.log(kleur.green().bold(
-      'https://github.com/' + result[randomEntry].owner + '/' + result[randomEntry].repo
-    ))
+      'https://github.com/' + result[randomEntry].owner + '/' + result[randomEntry].repo,
+    )),
   );
