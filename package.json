@@ -8,6 +8,9 @@
   "scripts": {
     "test": "xo"
   },
+  "files": [
+    "index.js"
+  ],
   "bin": {
     "random-starred-repository": "./index.js"
   },
