@@ -6,7 +6,6 @@ import kleur from 'kleur';
 import random from 'random';
 
 const user = process.argv.slice(2)[0];
-const randomEntry = random.int(0, 29);
 const lastPage = new RegExp(/(.*)page=(.*)>; rel="last"/);
 
 if (!user) {
@@ -39,8 +38,9 @@ const getRandomPage = user =>
 
 getRandomPage(user)
   .then(page => getStars(user, page))
+  .then(results => results[random.int(0, results.length - 1)])
   .then(result =>
     console.log(kleur.green().bold(
-      'https://github.com/' + result[randomEntry].owner + '/' + result[randomEntry].repo,
+      'https://github.com/' + result.owner + '/' + result.repo,
     )),
   );
