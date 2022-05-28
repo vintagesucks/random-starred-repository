@@ -11,5 +11,5 @@ npx -q random-starred-repository username
 
 ## Example output
 ```sh
-https://github.com/dawnlabs/carbon
+https://github.com/carbon-app/carbon
 ```
