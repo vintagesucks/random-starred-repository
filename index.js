@@ -23,18 +23,18 @@ const getStars = (user, page) =>
       })),
     )
     .catch(error => {
-      console.error(kleur.red().bold('Unable to get stars (' + error.statusCode + ' ' + error.statusMessage + ')'));
-      process.exit(0);
+      console.error(kleur.red().bold('Unable to get stars (' + error.response.statusCode + ' ' + error.response.statusMessage + ')'));
+      process.exit(1);
     });
 
 const getRandomPage = user =>
   got(`https://api.github.com/users/${user}/starred`)
-    .then(response =>
-      response.headers.link
-        .replace(lastPage, '$2'),
-    )
+    .then(response => response.headers.link ? response.headers.link.replace(lastPage, '$2') : 1)
     .then(pages => random.int(1, Number(pages)))
-    .catch(error => console.error(kleur.red().bold('Unable to get random page, falling back to first page (' + error.statusCode + ' ' + error.statusMessage + ')')));
+    .catch(error => {
+      console.error(kleur.red().bold('Unable to get random page (' + error.response.statusCode + ' ' + error.response.statusMessage + ')'));
+      process.exit(1);
+    });
 
 getRandomPage(user)
   .then(page => getStars(user, page))
