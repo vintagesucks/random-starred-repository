@@ -16,6 +16,14 @@ if (!user) {
 const getStars = (user, page) =>
   got(`https://api.github.com/users/${user}/starred?page=${page}`)
     .then(response => JSON.parse(response.body))
+    .then(response => {
+      if (response.length === 0) {
+        console.warn(kleur.yellow().bold(user + ' doesn’t have any starred repositories yet.'));
+        process.exit(0);
+      }
+
+      return response;
+    })
     .then(starred =>
       starred.map(s => ({
         owner: s.owner.login,
