@@ -1,23 +1,25 @@
 name: Build
+
 on: [push]
+
 jobs:
   build:
     strategy:
       matrix:
-        node: [ '16', '14' ]
+        node:
+          - 18
+          - 16
         platform: [ubuntu-latest]
     runs-on: ${{ matrix.platform }}
     steps:
-    - uses: actions/checkout@master
-    - name: Setup Node.js
-      uses: actions/setup-node@v3.2.0
-      with:
-        node-version: ${{ matrix.node }}
-        cache: 'yarn'
-    - name: install yarn
-      run: npm install -g yarn
-    - name: yarn install, xo, and test
-      run: |
-        yarn
-        yarn test
-        node index.js vintagesucks
+      - uses: actions/checkout@master
+      - name: Setup Node.js
+        uses: actions/setup-node@v3.2.0
+        with:
+          node-version: ${{ matrix.node }}
+          cache: "yarn"
+      - name: yarn install, xo, and test
+        run: |
+          yarn
+          yarn test
+          node index.js vintagesucks
