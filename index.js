@@ -44,7 +44,7 @@ const getRandomPage = user =>
       process.exit(1);
     });
 
-getRandomPage(user)
+await getRandomPage(user)
   .then(page => getStars(user, page))
   .then(results => results[random.int(0, results.length - 1)])
   .then(result =>
