@@ -6,7 +6,7 @@ import kleur from 'kleur';
 import random from 'random';
 
 const user = process.argv.slice(2)[0];
-const lastPage = new RegExp(/(.*)page=(.*)>; rel="last"/);
+const lastPage = /(.*)page=(.*)>; rel="last"/;
 
 if (!user) {
   console.log('Usage: `npx -q random-starred-repository username`');
