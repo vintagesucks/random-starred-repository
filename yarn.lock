@@ -2341,9 +2341,9 @@ quick-lru@^6.1.1:
   integrity sha512-S27GBT+F0NTRiehtbrgaSE1idUAJ5bX8dPAQTdylEyNlrdcH5X4Lz7Edz3DYzecbsCluD5zO8ZNEe04z3D3u6Q==
 
 random@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/random/-/random-4.0.2.tgz#5a358cf97b4fad0eefa48ccf9b12d62ff58136c9"
-  integrity sha512-KMBi+Aa8RWIpFyQgBAQwVwR9Yy6vFTjw0GHJeZS6AtUB5YgOkSz0zCmk7BpgIcBy7emP0g8I/ysGvHvDw/c3sA==
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/random/-/random-4.1.0.tgz#3e0fff0eea0d311e6a80fd2c91e72bb064dec363"
+  integrity sha512-6Ajb7XmMSE9EFAMGC3kg9mvE7fGlBip25mYYuSMzw/uUSrmGilvZo2qwX3RnTRjwXkwkS+4swse9otZ92VjAtQ==
   dependencies:
     seedrandom "^3.0.5"
 
