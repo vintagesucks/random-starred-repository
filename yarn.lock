@@ -3243,10 +3243,10 @@ wrappy@1:
   resolved "https://registry.yarnpkg.com/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
   integrity sha1-tSQ9jz7BqjXxNkYFvA0QNuMKtp8=
 
-xo@^0.55.0:
-  version "0.55.1"
-  resolved "https://registry.yarnpkg.com/xo/-/xo-0.55.1.tgz#9ef320a2dc46ccd42ca3ccf3c6c2a338ae2a6e8b"
-  integrity sha512-xjwxX6YM2JmAqmoGaXiBSyzE4DVCzSCgIux4Y001BeMc2V42xyoZtdrqICGYwo8or4cS/QBKJqKiy5QbJ+YqHw==
+xo@^0.56.0:
+  version "0.56.0"
+  resolved "https://registry.yarnpkg.com/xo/-/xo-0.56.0.tgz#85fbb215ea4115c9c74af7a4e20a88b6590f02cd"
+  integrity sha512-ohzSqgQ8POgZ3KNaEK/gxDovb6h3cglxv8+xi9Dn7gmRe8g4qotpOZpMs5ACJhvkJDmJOhiKbk6Uq6Mx1Di9DA==
   dependencies:
     "@eslint/eslintrc" "^2.1.0"
     "@typescript-eslint/eslint-plugin" "^6.0.0"
