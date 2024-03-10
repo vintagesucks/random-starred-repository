@@ -15,7 +15,7 @@
     "random-starred-repository": "./index.js"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "keywords": [],
   "license": "MIT",
