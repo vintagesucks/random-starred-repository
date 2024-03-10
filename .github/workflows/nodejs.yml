@@ -8,7 +8,6 @@ jobs:
       matrix:
         node:
           - 20
-          - 18
         platform: [ubuntu-latest]
     runs-on: ${{ matrix.platform }}
     steps:
