@@ -13,3 +13,12 @@ npx -q random-starred-repository username
 ```sh
 https://github.com/carbon-app/carbon
 ```
+
+## Development
+Run test matrix locally with [`act`](https://github.com/nektos/act):
+```sh
+act --job build \
+  --workflows .github/workflows/nodejs.yml \
+  --platform ubuntu-latest=shivammathur/node:latest \
+  --container-architecture linux/amd64
+```
