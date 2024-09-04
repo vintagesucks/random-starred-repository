@@ -2696,10 +2696,10 @@ quick-lru@^5.1.1:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-5.1.1.tgz#366493e6b3e42a3a6885e2e99d18f80fb7a8c932"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
-random@^4.0.2:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/random/-/random-4.1.0.tgz#3e0fff0eea0d311e6a80fd2c91e72bb064dec363"
-  integrity sha512-6Ajb7XmMSE9EFAMGC3kg9mvE7fGlBip25mYYuSMzw/uUSrmGilvZo2qwX3RnTRjwXkwkS+4swse9otZ92VjAtQ==
+random@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/random/-/random-5.0.1.tgz#47d12fc179ed873094b15996b567c772da1ef470"
+  integrity sha512-RoDYHPoOBaxJ6x6aGixI3XI4GgyOMmbRdtK4jhj+bs8/uDn66NvKCAEOU6F8ZyO9gvlw3+chjUclcHdULMaP3w==
   dependencies:
     seedrandom "^3.0.5"
 
