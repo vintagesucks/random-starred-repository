@@ -22,7 +22,7 @@
   "dependencies": {
     "got": "^14.2.1",
     "kleur": "^4.0.2",
-    "random": "^4.0.2"
+    "random": "^5.1.0"
   },
   "devDependencies": {
     "xo": "^0.58.0"
