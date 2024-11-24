@@ -1,6 +1,6 @@
 {
   "name": "random-starred-repository",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Returns a random repository starred by a user",
   "repository": "vintagesucks/random-starred-repository",
   "main": "index.js",
