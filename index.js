@@ -13,42 +13,39 @@ if (!user) {
   process.exit(1);
 }
 
-const getStars = (user, page) =>
-  got(`https://api.github.com/users/${user}/starred?page=${page}`)
-    .then(response => JSON.parse(response.body))
-    .then(response => {
-      if (response.length === 0) {
-        console.warn(kleur.yellow().bold(user + ' doesn’t have any starred repositories yet.'));
-        process.exit(0);
-      }
-
-      return response;
-    })
-    .then(starred =>
-      starred.map(s => ({
-        owner: s.owner.login,
-        repo: s.name,
-      })),
-    )
+const getStars = async (user, page) => {
+  const response = await got(`https://api.github.com/users/${user}/starred?page=${page}`)
     .catch(error => {
-      console.error(kleur.red().bold('Unable to get stars (' + error.response.statusCode + ' ' + error.response.statusMessage + ')'));
+      console.error(kleur.red().bold(`Unable to get stars (${error.response?.statusCode} ${error.response?.statusMessage})`));
       process.exit(1);
     });
 
-const getRandomPage = user =>
-  got(`https://api.github.com/users/${user}/starred`)
-    .then(response => response.headers.link ? response.headers.link.replace(lastPage, '$2') : 1)
-    .then(pages => random.int(1, Number(pages)))
+  const starred = JSON.parse(response.body);
+
+  if (starred.length === 0) {
+    console.warn(kleur.yellow().bold(`${user} doesn’t have any starred repositories yet.`));
+    process.exit(0);
+  }
+
+  return starred.map(s => ({
+    owner: s.owner.login,
+    repo: s.name,
+  }));
+};
+
+const getRandomPage = async user => {
+  const response = await got(`https://api.github.com/users/${user}/starred`)
     .catch(error => {
-      console.error(kleur.red().bold('Unable to get random page (' + error.response.statusCode + ' ' + error.response.statusMessage + ')'));
+      console.error(kleur.red().bold(`Unable to get random page (${error.response?.statusCode} ${error.response?.statusMessage})`));
       process.exit(1);
     });
 
-await getRandomPage(user)
-  .then(page => getStars(user, page))
-  .then(results => results[random.int(0, results.length - 1)])
-  .then(result =>
-    console.log(kleur.green().bold(
-      'https://github.com/' + result.owner + '/' + result.repo,
-    )),
-  );
+  const pages = response.headers.link ? response.headers.link.replace(lastPage, '$2') : 1;
+  return random.int(1, Number(pages));
+};
+
+const page = await getRandomPage(user);
+const results = await getStars(user, page);
+const result = results[random.int(0, results.length - 1)];
+
+console.log(kleur.green().bold(`https://github.com/${result.owner}/${result.repo}`));
