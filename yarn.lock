@@ -2729,9 +2729,9 @@ quick-lru@^5.1.1:
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
 random@^5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/random/-/random-5.1.1.tgz#fc721bcfcc586e73d3dc93e2d8571cf8f452ab81"
-  integrity sha512-iidvORUvXY1ItoYxO0eduHCKl22QV0G6460vRHe862dUagJKPhRyjUGwK8ioOCG4NRuFvExHFpqMngsnr2miwA==
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/random/-/random-5.2.0.tgz#8dc0cded081a25a531520c6fac58aaa4abf35b02"
+  integrity sha512-OS7NKhvUlcqapGiTbsKlB+X2/+UWyz0Ni0m9YYkG4zoiB4ov2Yp92PVA1GIleU7UKs9fnRUmPWEVdUEyWgluYA==
 
 read-pkg-up@^7.0.1:
   version "7.0.1"
