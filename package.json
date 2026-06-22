@@ -20,7 +20,7 @@
   "keywords": [],
   "license": "MIT",
   "dependencies": {
-    "got": "^15.0.5",
+    "got": "^15.0.6",
     "kleur": "^4.0.2",
     "random": "^5.1.1"
   },
