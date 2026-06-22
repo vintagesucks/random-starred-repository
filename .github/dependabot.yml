@@ -3,10 +3,13 @@ updates:
 - package-ecosystem: "github-actions"
   directory: "/"
   schedule:
-    interval: "daily"
+    interval: "monthly"
+  cooldown:
+    default-days: 5
 - package-ecosystem: npm
   directory: "/"
   schedule:
-    interval: daily
-    time: "02:00"
+    interval: monthly
+  cooldown:
+    default-days: 5
   open-pull-requests-limit: 10
